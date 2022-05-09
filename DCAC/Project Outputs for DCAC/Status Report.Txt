@@ -1,0 +1,10 @@
+Output: Bill of Materials
+Type  : BOM
+From  : Variant [[No Variations]] of PCB Document [DCAC_V2b.PcbDoc]
+   Generated File[Bill of Materials-DCAC_V2b.xlsx]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 1:46:34 AM On 11/15/2021

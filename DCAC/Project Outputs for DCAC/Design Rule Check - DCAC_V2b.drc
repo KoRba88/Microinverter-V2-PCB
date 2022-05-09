@@ -1,0 +1,66 @@
+Protel Design System Design Rule Check
+PCB File : E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc
+Date     : 11/15/2021
+Time     : 12:50:18 PM
+
+Processing Rule : Clearance Constraint (Gap=0.178mm) (InNetClass('GRID+')),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.178mm) (InNetClass('BOTT')),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.102mm) ((InComponent('U2') OR InComponent('J1') OR InComponent('J4') OR InComponent('j5') OR InComponent('J6') OR InComponent('CONN_BOTT'))),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=1.8mm) ((InNetClass('HVDC+')   OR  InNetClass('HVDC-'))),((OnLayer('Top Layer') OR OnLayer('Bottom Layer')))
+   Violation between Clearance Constraint: (0.643mm < 1.8mm) Between Pad C86-1(140.025mm,98.165mm) on Bottom Layer And Track (125.705mm,96.87mm)(141.36mm,96.87mm) on Bottom Layer 
+   Violation between Clearance Constraint: (1.04mm < 1.8mm) Between Pad C86-1(140.025mm,98.165mm) on Bottom Layer And Track (141.36mm,96.87mm)(141.74mm,97.25mm) on Bottom Layer 
+   Violation between Clearance Constraint: (1.258mm < 1.8mm) Between Pad C86-2(140.025mm,96.665mm) on Bottom Layer And Track (126.905mm,98.575mm)(143.75mm,98.575mm) on Bottom Layer 
+   Violation between Clearance Constraint: (0.298mm < 1.8mm) Between Pad U1-1(142.16mm,97.5mm) on Bottom Layer And Track (126.905mm,98.575mm)(143.75mm,98.575mm) on Bottom Layer 
+   Violation between Clearance Constraint: (0.934mm < 1.8mm) Between Pad U1-1(142.16mm,97.5mm) on Bottom Layer And Track (143.75mm,98.575mm)(144.912mm,97.413mm) on Bottom Layer 
+   Violation between Clearance Constraint: (1.451mm < 1.8mm) Between Track (123.55mm,101.93mm)(126.905mm,98.575mm) on Bottom Layer And Track (125.705mm,96.87mm)(141.36mm,96.87mm) on Bottom Layer 
+   Violation between Clearance Constraint: (1.451mm < 1.8mm) Between Track (125.705mm,96.87mm)(141.36mm,96.87mm) on Bottom Layer And Track (126.905mm,98.575mm)(143.75mm,98.575mm) on Bottom Layer 
+   Violation between Clearance Constraint: (1.071mm < 1.8mm) Between Track (126.905mm,98.575mm)(143.75mm,98.575mm) on Bottom Layer And Track (141.36mm,96.87mm)(141.74mm,97.25mm) on Bottom Layer 
+Rule Violations :8
+
+Processing Rule : Clearance Constraint (Gap=2mm) (InNetClass('GRID+')  OR InNetClass('GRID-')),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.5mm) (InNetClass('HVDC')),((OnLayer('TOP_RTN') OR OnLayer('BOTT_RTN')))
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.178mm) ((OnLayer('TOP_RTN') OR OnLayer('BOTT_RTN'))),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.178mm) (InNetClass('HV_CURRENT_SENSE')),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.178mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.178mm) (InNetClass('TOP_MOS')),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.178mm) ((InNetClass('IND') OR InNetClass('HVDC+') OR InNetClass('GRID+') OR InNetClass('GRID-'))),(InNet('BOTT_GND'))
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Net NetD35_1 Between Pad U40-13(130.725mm,132.175mm) on Bottom Layer [Unplated] And Pad U40-12(131.475mm,132.925mm) on Bottom Layer [Unplated] 
+Rule Violations :1
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Component Clearance Constraint ( Horizontal Gap = 0.254mm, Vertical Gap = 0.254mm ) (All),(All) 
+   Violation between Component Clearance Constraint: (Collision < 0.254mm) Between Component C6-45 uF 500V (92.725mm,91.07mm) on Top Layer And Small Component NTC4-100K (70.975mm,116.675mm) on Bottom Layer 
+   Violation between Component Clearance Constraint: (Collision < 0.254mm) Between Component CMC1 (137.525mm,38.375mm) on Top Layer And Small Component C188-2.2nF (139.69mm,28.71mm) on Bottom Layer 
+   Violation between Component Clearance Constraint: (Collision < 0.254mm) Between Component CMC1 (137.525mm,38.375mm) on Top Layer And Small Component C189-2.2nF (139.735mm,38.33mm) on Bottom Layer 
+Rule Violations :3
+
+
+Violations Detected : 12
+Waived Violations : 0
+Time Elapsed        : 00:00:56

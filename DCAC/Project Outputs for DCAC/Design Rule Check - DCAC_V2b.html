@@ -1,0 +1,380 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD21\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">11/15/2021</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">12:50:18 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:56</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc" class="file"><acronym title="E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc">E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">12</td></tr>
+</table>
+</td>
+</table><a name="IDFKWKMQAU1IE0CAO3BYOCG2WUPCN2WNRYTENZJVKBUNNU14NBJXKI"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDGNAIS5P3UKGCHEFB1WR25T40WFFYOPCAHIN2G1HIX42WSSGGR2EO">Clearance Constraint (Gap=0.178mm) (InNetClass('GRID+')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQ3DB2VA1DWBYI4YKEVAR5KW5HDDQNHS3QSIZLT5SMYSKAJBRYLF">Clearance Constraint (Gap=0.178mm) (InNetClass('BOTT')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDB4TQFHG3LJNUF3QGLSGX1GTBSDD4KNTOWY3ACCKZE3WU4ZKV3ENO">Clearance Constraint (Gap=0.102mm) ((InComponent('U2') OR InComponent('J1') OR InComponent('J4') OR InComponent('j5') OR InComponent('J6') OR InComponent('CONN_BOTT'))),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDBLVIYOAJGWUFBN4Z45ULIG2S2EM5Z2XY1ZLLR5PG5EMOPAY0LBOK">Clearance Constraint (Gap=1.8mm) ((InNetClass('HVDC+')   OR  InNetClass('HVDC-'))),((OnLayer('Top Layer') OR OnLayer('Bottom Layer')))</a></td>
+<td class="column2">8</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID44ZPH2UPR4V2IKZW0S1TIMHWAPMCA0YAENGMAFCC5FJOI2KQUH5O">Clearance Constraint (Gap=2mm) (InNetClass('GRID+')  OR InNetClass('GRID-')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRVZZNWDLFN1ROPQ1I3EKZCOI4EF44HAOZVM1EIQFTCEO5YWJAED">Clearance Constraint (Gap=0.5mm) (InNetClass('HVDC')),((OnLayer('TOP_RTN') OR OnLayer('BOTT_RTN')))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZGW3S4AWG3J0ERP4XNNBPRRG3J3BEJVF3YJTGCE3XJOX0P1OZ33I">Clearance Constraint (Gap=0.178mm) ((OnLayer('TOP_RTN') OR OnLayer('BOTT_RTN'))),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDV5L1DJ0LQ24BNUC05AGFSJA1QGF3JHLXQPNBAMC5WG2VRVWGBYXH">Clearance Constraint (Gap=0.178mm) (InNetClass('HV_CURRENT_SENSE')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBRNKORAOSI5OGAIKUL0Z24WZVEHSDAFFKLKWBBFL5CUUEHUMTFY">Clearance Constraint (Gap=0.178mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5JNFLKEZZO2KMFATZGGNNFN3JLYR4TZNOOHCDTK3Y5F51PXASBNL">Clearance Constraint (Gap=0.178mm) (InNetClass('TOP_MOS')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDC4VDWAOHLMQDJ5LZTJKAMW42EONPA122VTOUMKBB44HU2OVPJITM">Clearance Constraint (Gap=0.178mm) ((InNetClass('IND') OR InNetClass('HVDC+') OR InNetClass('GRID+') OR InNetClass('GRID-'))),(InNet('BOTT_GND'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQMIXJULPDXZHGEX0RCS3DVEMEGGM5GO2WMHMMPOYVSARXKLCDG0F">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPJBAUSF4G1QSNYKX1Q5ANYISNL3KKMXZHOXGVUHLYLZLZ3PE2ZOC">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDIEWAEWUTVND0P5YN0O0RK2ZKLHI5NL5UL0BQLOIM1W5GSS5DIIQG">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJM1ZRIZ25GCINI2M10IBDWMF4ERIEVU5QAXOW1ORJ5CQRXCHE3TH">Component Clearance Constraint ( Horizontal Gap = 0.254mm, Vertical Gap = 0.254mm ) (All),(All) </a></td>
+<td class="column2">3</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">12</td>
+</tr>
+</table><br><a name="IDBLVIYOAJGWUFBN4Z45ULIG2S2EM5Z2XY1ZLLR5PG5EMOPAY0LBOK"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=1.8mm) ((InNetClass('HVDC+')   OR  InNetClass('HVDC-'))),((OnLayer('Top Layer') OR OnLayer('Bottom Layer')))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5460.005mil|Location2.X=5532.121mil|Location1.Y=3795.379mil|Location2.Y=3867.495mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5460.005mil|Location2.X=5532.121mil|Location1.Y=3795.379mil|Location2.Y=3867.495mil|Absolute=True">Clearance Constraint: (0.643mm &lt; 1.8mm) Between Pad C86-1(140.025mm,98.165mm) on Bottom Layer And Track (125.705mm,96.87mm)(141.36mm,96.87mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5510.633mil|Location2.X=5582.749mil|Location1.Y=3795.052mil|Location2.Y=3867.168mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5510.633mil|Location2.X=5582.749mil|Location1.Y=3795.052mil|Location2.Y=3867.168mil|Absolute=True">Clearance Constraint: (1.04mm &lt; 1.8mm) Between Pad C86-1(140.025mm,98.165mm) on Bottom Layer And Track (141.36mm,96.87mm)(141.74mm,97.25mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5493.47mil|Location2.X=5565.586mil|Location1.Y=3815.084mil|Location2.Y=3887.2mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5493.47mil|Location2.X=5565.586mil|Location1.Y=3815.084mil|Location2.Y=3887.2mil|Absolute=True">Clearance Constraint: (1.258mm &lt; 1.8mm) Between Pad C86-2(140.025mm,96.665mm) on Bottom Layer And Track (126.905mm,98.575mm)(143.75mm,98.575mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5577.525mil|Location2.X=5649.641mil|Location1.Y=3833.981mil|Location2.Y=3906.097mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5577.525mil|Location2.X=5649.641mil|Location1.Y=3833.981mil|Location2.Y=3906.097mil|Absolute=True">Clearance Constraint: (0.298mm &lt; 1.8mm) Between Pad U1-1(142.16mm,97.5mm) on Bottom Layer And Track (126.905mm,98.575mm)(143.75mm,98.575mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5603.735mil|Location2.X=5675.851mil|Location1.Y=3832.193mil|Location2.Y=3904.309mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5603.735mil|Location2.X=5675.851mil|Location1.Y=3832.193mil|Location2.Y=3904.309mil|Absolute=True">Clearance Constraint: (0.934mm &lt; 1.8mm) Between Pad U1-1(142.16mm,97.5mm) on Bottom Layer And Track (143.75mm,98.575mm)(144.912mm,97.413mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4960.194mil|Location2.X=5032.31mil|Location1.Y=3811.285mil|Location2.Y=3883.401mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4960.194mil|Location2.X=5032.31mil|Location1.Y=3811.285mil|Location2.Y=3883.401mil|Absolute=True">Clearance Constraint: (1.451mm &lt; 1.8mm) Between Track (123.55mm,101.93mm)(126.905mm,98.575mm) on Bottom Layer And Track (125.705mm,96.87mm)(141.36mm,96.87mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4960.194mil|Location2.X=5032.31mil|Location1.Y=3811.285mil|Location2.Y=3883.401mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4960.194mil|Location2.X=5032.31mil|Location1.Y=3811.285mil|Location2.Y=3883.401mil|Absolute=True">Clearance Constraint: (1.451mm &lt; 1.8mm) Between Track (125.705mm,96.87mm)(141.36mm,96.87mm) on Bottom Layer And Track (126.905mm,98.575mm)(143.75mm,98.575mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5544.257mil|Location2.X=5616.373mil|Location1.Y=3818.765mil|Location2.Y=3890.881mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5544.257mil|Location2.X=5616.373mil|Location1.Y=3818.765mil|Location2.Y=3890.881mil|Absolute=True">Clearance Constraint: (1.071mm &lt; 1.8mm) Between Track (126.905mm,98.575mm)(143.75mm,98.575mm) on Bottom Layer And Track (141.36mm,96.87mm)(141.74mm,97.25mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDPJBAUSF4G1QSNYKX1Q5ANYISNL3KKMXZHOXGVUHLYLZLZ3PE2ZOC"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5138.386mil|Location2.X=5194.291mil|Location1.Y=5185.63mil|Location2.Y=5241.535mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5138.386mil|Location2.X=5194.291mil|Location1.Y=5185.63mil|Location2.Y=5241.535mil|Absolute=True">Un-Routed Net Constraint: Net NetD35_1 Between Pad U40-13(130.725mm,132.175mm) on Bottom Layer [Unplated] And Pad U40-12(131.475mm,132.925mm) on Bottom Layer [Unplated] </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDJM1ZRIZ25GCINI2M10IBDWMF4ERIEVU5QAXOW1ORJ5CQRXCHE3TH"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Component Clearance Constraint ( Horizontal Gap = 0.254mm, Vertical Gap = 0.254mm ) (All),(All) </th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2494.805mil|Location2.X=2502.472mil|Location1.Y=3606.019mil|Location2.Y=3613.686mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2494.805mil|Location2.X=2502.472mil|Location1.Y=3606.019mil|Location2.Y=3613.686mil|Absolute=True">Component Clearance Constraint: (Collision &lt; 0.254mm) Between Component C6-45 uF 500V (92.725mm,91.07mm) on Top Layer And Small Component NTC4-100K (70.975mm,116.675mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5239.864mil|Location2.X=5247.53mil|Location1.Y=1028.059mil|Location2.Y=1035.726mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5239.864mil|Location2.X=5247.53mil|Location1.Y=1028.059mil|Location2.Y=1035.726mil|Absolute=True">Component Clearance Constraint: (Collision &lt; 0.254mm) Between Component CMC1 (137.525mm,38.375mm) on Top Layer And Small Component C188-2.2nF (139.69mm,28.71mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5241.642mil|Location2.X=5249.309mil|Location1.Y=1406.794mil|Location2.Y=1414.46mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5241.642mil|Location2.X=5249.309mil|Location1.Y=1406.794mil|Location2.Y=1414.46mil|Absolute=True">Component Clearance Constraint: (Collision &lt; 0.254mm) Between Component CMC1 (137.525mm,38.375mm) on Top Layer And Small Component C189-2.2nF (139.735mm,38.33mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

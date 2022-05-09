@@ -1,0 +1,15 @@
+DRC Rules Export File for PCB: E:\Programy\Projekty\Microinverter\V2\DCAC\DCAC_V2b.PcbDoc
+RuleKind=Clearance|RuleName=Clearance_HV_CURRENT_SENSE|Scope=Board|Minimum=7.00
+RuleKind=Clearance|RuleName=Clearance_INDGND|Scope=Board|Minimum=7.00
+RuleKind=Clearance|RuleName=Clearance_TOP_MOS|Scope=Board|Minimum=7.00
+RuleKind=Clearance|RuleName=Clearance_GND2|Scope=Board|Minimum=7.00
+RuleKind=Clearance|RuleName=Clearance_small|Scope=Board|Minimum=4.00
+RuleKind=Clearance|RuleName=Clearance_3|Scope=Board|Minimum=7.00
+RuleKind=Clearance|RuleName=Clearance_5|Scope=Board|Minimum=7.00
+RuleKind=Clearance|RuleName=Clearance_4|Scope=Board|Minimum=19.69
+RuleKind=Clearance|RuleName=Clearance_2|Scope=Board|Minimum=78.74
+RuleKind=Clearance|RuleName=Clearance_HVDC|Scope=Board|Minimum=70.87
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=2.36
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=7.00
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=7.00
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0

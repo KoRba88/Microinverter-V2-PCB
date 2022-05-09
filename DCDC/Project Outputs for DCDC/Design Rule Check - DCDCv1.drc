@@ -1,0 +1,47 @@
+Protel Design System Design Rule Check
+PCB File : E:\Programy\Projekty\Microinverter\V2\DCDC\DCDCv1.1.PcbDoc
+Date     : 11/14/2021
+Time     : 9:52:25 PM
+
+Processing Rule : Clearance Constraint (Gap=0.152mm) ((HasFootprint('CLP-104-02-XXX-D-BE') or HasFootprint('CLP-106-02-XXX-D-BE') or HasFootprint('NXP-SOT1118_L'))),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0mm) (HasFootprint('ETD39-K-V-16P-HORIZONTAL-PRI')),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.152mm) ((HasFootprint('LQFP-128') or  HasFootprint('AP63357QZV7') or HasFootprint('SON50P200X200X100-9N'))),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.203mm) (InNet('PGND')),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.203mm) (InNet('PGNDs')),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.178mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+   Violation between Short-Circuit Constraint: Between Pad L1-2(145.58mm,109.675mm) on Multi-Layer And Pad T2-4(144.275mm,112.392mm) on Bottom Layer Location : [X = 145.578mm][Y = 111.659mm]
+   Violation between Short-Circuit Constraint: Between Pad L1-2(145.58mm,109.675mm) on Multi-Layer And Pad T2-5(144.275mm,107.312mm) on Bottom Layer Location : [X = 145.568mm][Y = 107.868mm]
+Rule Violations :2
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Component Clearance Constraint ( Horizontal Gap = 0.254mm, Vertical Gap = 0.254mm ) (All),(All) 
+Rule Violations :0
+
+Processing Rule : Component Clearance Constraint ( Horizontal Gap = 0mm, Vertical Gap = 0mm ) (HasFootprint('ETD39-K-V-16P-HORIZONTAL-PRI')),(All) 
+Rule Violations :0
+
+Processing Rule : Component Clearance Constraint ( Horizontal Gap = 0mm, Vertical Gap = 0mm ) (HasFootprint('IND LLC')),(All) 
+Rule Violations :0
+
+
+Violations Detected : 2
+Waived Violations : 0
+Time Elapsed        : 00:00:02

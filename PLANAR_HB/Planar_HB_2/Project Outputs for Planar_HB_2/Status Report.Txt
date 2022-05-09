@@ -1,0 +1,13 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [Planar_HB_2.PrjPcb]
+   Generated File[Planar_HB_2.TXT]
+   Generated File[Planar_HB_2.DRL]
+   Generated File[Planar_HB_2.LDP]
+   Generated File[Planar_HB_2.DRR]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 11:38:02 PM On 11/14/2021

@@ -1,0 +1,8 @@
+Record=TopLevelDocument|FileName=CAN.SchDoc|SheetNumber=7
+Record=NoMainPathDocument|SourceDocument=CAN.SchDoc|FileName=HV_BUCK_V2.SchDoc|SheetNumber=5
+Record=NoMainPathDocument|SourceDocument=CAN.SchDoc|FileName=ISO_IO.SchDoc|SheetNumber=3
+Record=NoMainPathDocument|SourceDocument=CAN.SchDoc|FileName=ISO_Power.SchDoc|SheetNumber=4
+Record=NoMainPathDocument|SourceDocument=CAN.SchDoc|FileName=LV_BUCK.SchDoc|SheetNumber=6
+Record=NoMainPathDocument|SourceDocument=CAN.SchDoc|FileName=MCU.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=CAN.SchDoc|FileName=Power_Stage.SchDoc|SheetNumber=1
+Record=NoMainPathDocument|SourceDocument=CAN.SchDoc|FileName=WIFI.SchDoc|SheetNumber=8

@@ -1,0 +1,10 @@
+Output: Generates pick and place files
+Type  : Pick Place
+From  : Variant [[No Variations]] of PCB Document [DCDCv1.1.PcbDoc]
+   Generated File[Pick Place for DCDCv1.1.csv]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 11:06:13 PM On 11/14/2021
